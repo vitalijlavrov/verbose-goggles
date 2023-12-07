@@ -1,0 +1,10 @@
+        case .addSticker(let sticker):
+            newCollage.stickers.append(sticker)
+            
+        case .changeSticker(let action, id: let id):
+            newCollage = changeSticker(action, id: id, in: newCollage)
+            
+        case .removeShape(let id):
+            newCollage.shapes.removeAll(where: { $0.id == id })
+            
+        case .removeText(let id):
